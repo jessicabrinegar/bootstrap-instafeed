@@ -1,0 +1,20 @@
+div{
+    border:1px dashed red;
+}
+
+div.user{
+    width:40%;
+    height:min-content;
+    display:flex;
+    justify-content:flex-start;
+}
+.user-pic{
+    border-radius: 50%;
+    height:2em;
+}
+strong.user-name{
+    padding-top:0.5em;
+}
+.fa-ellipsis{
+    padding:0.5em;
+}
