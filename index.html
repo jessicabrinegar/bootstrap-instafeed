@@ -11,15 +11,40 @@
 </head>
 <body>
     <div class="container-fluid mt-3">
-        <!-- navigation bar -->
+<!-- navigation bar -->
         <div class="row">
+    <!-- column for 'instagram' header -->
             <div class="col-6">
                 <i class="fa-brands fa-instagram"></i>
                 <span>Instagram</span>
             </div>
+    <!-- column for buttons -->
             <div class="col-6">
                 <div class="btn-group float-end">
-                    <button type="button" class="btn btn-success me-3 rounded">Create a new post</button>
+        <!-- button to trigger modal -->
+                    <button type="button" class="btn btn-success me-3 rounded" data-bs-toggle="modal" data-bs-target="#modal">Create a new post</button>
+            <!-- modal -->
+                    <div class="modal fade" id="modal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header border">
+                              <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
+                    <!-- the X to close the modal -->
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body border">
+                                <label for="message-text" class="col-form-label">Caption:</label>
+                                <textarea class="form-control mb-2" id="message-text"></textarea>
+                                <i class="fa-solid fa-camera border px-2 py-1"></i>&nbsp;&nbsp;<i class="fa-sharp fa-solid fa-location-dot border px-2 py-1"></i>
+                            </div>
+                            <div class="modal-footer border p-1">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-success">Publish</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+        <!-- settings dropdown button -->
                     <button type="button" class="btn btn-secondary dropdown-toggle rounded" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-gear"></i>
                     </button>
@@ -33,30 +58,173 @@
                   </div>
             </div>
         </div>
+<!-- grid & scroll buttons/links -->
         <div class="row">
             <div class="col-6">
-                <i class="fa-solid fa-table-cells float-end p-1"></i>
+                <button type="button" class="btn grid-btn float-end"><i class="fa-solid fa-table-cells"></i></button>
             </div>
             <div class="col-6">
-                <i class="fa-solid fa-square p-1"></i>
+                <button type="button" class="btn scroll-btn" id="scroll-view"><i class="fa-solid fa-square" id="scroll-view"></i></button>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="card position-absolute top-50 start-50 translate-middle" style="width: 30rem;">
-                    <div class="card-title">
-                        <img class='user-pic' src="jess.png"/>&nbsp&nbsp<strong class="user-name">ms.maebee</strong>
+<!-- posts (using bootstrap 'cards')-->
+        <div class="row mt-5">
+<!-- 1st post -->
+            <div class="col-12 d-flex justify-content-center mb-5">
+                <!-- position-absolute top-50 start-50 translate-middle border-secondary -->
+                <div class="card" style="width: 30rem;">
+                    <div class="card-title pt-1 ps-1">
+                        <img class='user-pic' src="img/jess.png"/>&nbsp&nbsp<strong>ms.maebee</strong>
                         <i class="fa fa-ellipsis float-end"></i>
                     </div>
-                    <div class="card-body">
-                        <img src="IMG_2507.JPG" class="card-img-top" alt="dog by lake">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="card-body p-0">
+                        <img src="img/mountains.jpeg" class="card-img-top">
+                        <div class="icons ps-1">
+                            <i class="fa fa-heart post-heart"></i>&nbsp&nbsp
+                            <i class="fa fa-comment"></i>&nbsp&nbsp
+                            <i class="fa fa-paper-plane"></i>
+                            <i class="fa fa-bookmark"></i>
+                        </div>
+                        <div class="likes ps-1">
+                            <img class="likes-user" id="html" src="img/html.png">
+                            <img class="likes-user" id="css" src="img/css.png">
+                            <img class="likes-user" id="geeks" src="img/4geeks.png">
+                            <span id=likedby-text>Liked by <strong>html5</strong>,&nbsp<strong>css3</strong>,&nbsp<strong>4geeksacademy</strong>, and others</span>
+                        </div>
+                        <p class="ps-1"><strong>ms.maebee</strong>&nbspThe mountains of <span class="hashtag">#colorado</span> are gorgeous! This was a "13-er" hike.</p>
                     </div>
-                  </div>
+                </div>
+            </div>
+<!-- 2nd post -->
+            <div class="col-12 d-flex justify-content-center mb-5">
+                <div class="card" style="width: 30rem;">
+                    <div class="card-title pt-1 ps-1">
+                        <img class='user-pic' src="img/jess.png"/>&nbsp&nbsp<strong>ms.maebee</strong>
+                        <i class="fa fa-ellipsis float-end"></i>
+                    </div>
+                    <div class="card-body p-0">
+                        <img src="img/horses.jpeg" class="card-img-top">
+                        <div class="icons ps-1">
+                            <i class="fa fa-heart post-heart"></i>&nbsp&nbsp
+                            <i class="fa fa-comment"></i>&nbsp&nbsp
+                            <i class="fa fa-paper-plane"></i>
+                            <i class="fa fa-bookmark"></i>
+                        </div>
+                        <div class="likes ps-1">
+                            <img class="likes-user" id="html" src="img/amazon.png">
+                            <img class="likes-user" id="css" src="img/css.png">
+                            <img class="likes-user" id="geeks" src="img/microsoft.png">
+                            <span id=likedby-text>Liked by <strong>amazon</strong>,&nbsp<strong>css3</strong>,&nbsp<strong>microsoft</strong>, and others</span>
+                        </div>
+                        <p class="ps-1"><strong>ms.maebee</strong>&nbsp I drove up on a group of<span class="hashtag">#horses</span> while navigating through <span class="hashtag">#wyoming</span>. What a gorgeous state!</p>
+                    </div>
+                </div>
+            </div>
+<!-- 3rd post -->
+            <div class="col-12 d-flex justify-content-center mb-5">
+                <div class="card" style="width: 30rem;">
+                    <div class="card-title pt-1 ps-1">
+                        <img class='user-pic' src="img/jess.png"/>&nbsp&nbsp<strong>ms.maebee</strong>
+                        <i class="fa fa-ellipsis float-end"></i>
+                    </div>
+                    <div class="card-body p-0">
+                        <img src="img/teotihuacan.jpeg" class="card-img-top">
+                        <div class="icons ps-1">
+                            <i class="fa fa-heart post-heart"></i>&nbsp&nbsp
+                            <i class="fa fa-comment"></i>&nbsp&nbsp
+                            <i class="fa fa-paper-plane"></i>
+                            <i class="fa fa-bookmark"></i>
+                        </div>
+                        <div class="likes ps-1">
+                            <img class="likes-user" id="html" src="img/apple.png">
+                            <img class="likes-user" id="css" src="img/html.png">
+                            <img class="likes-user" id="geeks" src="img/google.png">
+                            <span id=likedby-text>Liked by <strong>apple</strong>,&nbsp<strong>html5</strong>,&nbsp<strong>google</strong>, and others</span>
+                        </div>
+                        <p class="ps-1"><strong>ms.maebee</strong>&nbspExploring <span class="hashtag">#teotihuacan</span> in <span class="hashtag">#mexico</span>. Learned a lot of cool history!</p>
+                    </div>
+                </div>
+            </div>
+<!-- 4th post -->
+            <div class="col-12 d-flex justify-content-center mb-5">
+                <div class="card" style="width: 30rem;">
+                    <div class="card-title pt-1 ps-1">
+                        <img class='user-pic' src="img/jess.png"/>&nbsp&nbsp<strong>ms.maebee</strong>
+                        <i class="fa fa-ellipsis float-end"></i>
+                    </div>
+                    <div class="card-body p-0">
+                        <img src="img/volcano.jpeg" class="card-img-top">
+                        <div class="icons ps-1">
+                            <i class="fa fa-heart post-heart"></i>&nbsp&nbsp
+                            <i class="fa fa-comment"></i>&nbsp&nbsp
+                            <i class="fa fa-paper-plane"></i>
+                            <i class="fa fa-bookmark"></i>
+                        </div>
+                        <div class="likes ps-1">
+                            <img class="likes-user" id="html" src="img/microsoft.png">
+                            <img class="likes-user" id="css" src="img/twitter.png">
+                            <img class="likes-user" id="geeks" src="img/amazon.png">
+                            <span id=likedby-text>Liked by <strong>microsoft</strong>,&nbsp<strong>twitter</strong>,&nbsp<strong>amazon</strong>, and others</span>
+                        </div>
+                        <p class="ps-1"><strong>ms.maebee</strong>&nbspWe went <span class="hashtag">#volcano-boarding</span> in <span class="hashtag">#leon</span> while travelling through <span class="hashtag">#nicaragua</span>. Thankfully, I managed to not hurt myself.</p>
+                    </div>
+                </div>
+            </div>
+<!-- 5th post -->
+            <div class="col-12 d-flex justify-content-center mb-5">
+                <div class="card" style="width: 30rem;">
+                    <div class="card-title pt-1 ps-1">
+                        <img class='user-pic' src="img/jess.png"/>&nbsp&nbsp<strong>ms.maebee</strong>
+                        <i class="fa fa-ellipsis float-end"></i>
+                    </div>
+                    <div class="card-body p-0">
+                        <img src="img/apoyo.jpeg" class="card-img-top">
+                        <div class="icons ps-1">
+                            <i class="fa fa-heart post-heart"></i>&nbsp&nbsp
+                            <i class="fa fa-comment"></i>&nbsp&nbsp
+                            <i class="fa fa-paper-plane"></i>
+                            <i class="fa fa-bookmark"></i>
+                        </div>
+                        <div class="likes ps-1">
+                            <img class="likes-user" id="html" src="img/twitter.png">
+                            <img class="likes-user" id="css" src="img/apple.png">
+                            <img class="likes-user" id="geeks" src="img/microsoft.png">
+                            <span id=likedby-text>Liked by <strong>twitter</strong>,&nbsp<strong>apple</strong>,&nbsp<strong>microsoft</strong>, and others</span>
+                        </div>
+                        <p class="ps-1"><strong>ms.maebee</strong>&nbspThe<span class="hashtag">#apoyo</span> lagoon in <span class="hashtag">#nicaragua</span> is captivating!</p>
+                    </div>
+                </div>
+            </div>
+<!-- 6th post -->
+            <div class="col-12 d-flex justify-content-center mb-5">
+                <div class="card" style="width: 30rem;">
+                    <div class="card-title pt-1 ps-1">
+                        <img class='user-pic' src="img/jess.png"/>&nbsp&nbsp<strong>ms.maebee</strong>
+                        <i class="fa fa-ellipsis float-end"></i>
+                    </div>
+                    <div class="card-body p-0">
+                        <img src="img/travel.jpeg" class="card-img-top">
+                        <div class="icons ps-1">
+                            <i class="fa fa-heart post-heart"></i>&nbsp&nbsp
+                            <i class="fa fa-comment"></i>&nbsp&nbsp
+                            <i class="fa fa-paper-plane"></i>
+                            <i class="fa fa-bookmark"></i>
+                        </div>
+                        <div class="likes ps-1">
+                            <img class="likes-user" id="html" src="img/amazon.png">
+                            <img class="likes-user" id="css" src="img/css.png">
+                            <img class="likes-user" id="geeks" src="img/apple.png">
+                            <span id=likedby-text>Liked by <strong>amazon</strong>,&nbsp<strong>css3</strong>,&nbsp<strong>apple</strong>, and others</span>
+                        </div>
+                        <p class="ps-1"><strong>ms.maebee</strong>&nbspOur hostel-stay in <span class="hashtag">#granada</span> was great. <span class="hashtag">#travel</span> is always the answer!</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
+
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="dynamic-feed.js"></script>
 </body>
 </html>

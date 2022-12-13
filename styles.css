@@ -1,6 +1,4 @@
-div{
-    border:1px dashed red;
-}
+/* div{border:1px dashed red;} */
 
 div.user{
     width:40%;
@@ -12,9 +10,40 @@ div.user{
     border-radius: 50%;
     height:2em;
 }
-strong.user-name{
-    padding-top:0.5em;
-}
 .fa-ellipsis{
     padding:0.5em;
+}
+.fa-bookmark{
+    float:right;
+    padding-right: 0.5em;
+    padding-top:0.2em;
+}
+span.hashtag{
+    color: rgb(58, 107, 180);
+}
+img.likes-user{
+    border-radius: 70%;
+}
+#html{
+    z-index: 3;
+    position: relative;
+}
+#css{
+    z-index: 2;
+    position: relative;
+    right: 10px;
+}
+#geeks{
+    z-index: 1;
+    position: relative;
+    right: 20px;
+}
+#likedby-text{
+    position:relative;
+    right:15px;
+    width: 100%;
+}
+.grid-image{
+    width:100%;
+    height:100%;
 }
